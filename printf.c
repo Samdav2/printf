@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 			case 'c':
 			{
 				c = va_arg(pointer, int);
-				putchar(c);
+				_putchar(c);
 				count++;
 				break;
 			}
@@ -37,7 +37,7 @@ int _printf(const char *format, ...)
 					str = "(null)";
 				while(*str != '\0')
 				{
-					putchar(*str);
+					_putchar(*str);
 					str++;
 					count++;
 				}
@@ -47,14 +47,14 @@ int _printf(const char *format, ...)
 
 			case '%':
 			{
-				putchar('%');
+				_putchar('%');
 				count++;
 				break;
 			}
 
 			default:
 			{
-				putchar('%');
+				_putchar('%');
 				putchar(*format);
 				count += 2;
 				break;
@@ -64,7 +64,7 @@ int _printf(const char *format, ...)
 
 		else
 		{
-			putchar(*format);
+			_putchar(*format);
 			count++;
 		}
 
